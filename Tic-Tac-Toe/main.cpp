@@ -5,7 +5,7 @@
 using namespace std;
 
 char board[9] = {};
-int random1[4] = {1,3,8,9};
+int randomCorner[4] = {1,3,8,9};
 
 void clearScreen();
 void clearBoard();
@@ -553,6 +553,7 @@ int lBotMove (int turn_) {
             return 3;
       int randomPos = rand() % 9 + 1;
       while (board[randomPos - 1] != '-') {
+            srand (time(NULL));
             randomPos = rand() % 9 + 1;
       }
       return randomPos;
